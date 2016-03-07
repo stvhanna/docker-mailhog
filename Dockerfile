@@ -2,8 +2,7 @@ FROM alpine:3.3
 
 MAINTAINER toph <toph@toph.fr>
 
-RUN apk add --update ca-certificates \
-    && rm -rf /var/cache/apk/* /tmp/*
+RUN apk add --no-cache ca-certificates
 
 ENV MAILHOG_VERSION 0.1.8
 
