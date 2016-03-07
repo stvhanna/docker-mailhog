@@ -1,9 +1,9 @@
-# mailhog docker image
+# MailHog docker image
 
-Here is an unofficial Dockerfile for [mailhog][mailhog].
+Here is an unofficial Dockerfile for [MailHog][mailhog].
 
 You can find several versions of this image in [the dedicated docker hub page][dockerhubpage].  
-It is a pretty light image: ~ 35 MB uncompressed.
+It is a pretty light image: ~17 MB uncompressed.
 
 ## Usage
 
