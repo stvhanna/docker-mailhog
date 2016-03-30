@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  mail:
+    image: tophfr/mailhog
+    build: .
+    ports:
+      - 1080:80
+    depends_on:
+      - mongo
+    environment:
+      MH_STORAGE: mongodb
+      MH_MONGO_URI: mongo:27017
+  mongo:
+    image: mongo
+  test:
+    image: busybox
+    depends_on:
+      - mail
+    command: "sh -c 'echo \"Subject: bonjour\n\nça va bien ?\nbisou\" | sendmail -S mail aaa@zzz.eee'"
+

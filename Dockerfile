@@ -3,12 +3,17 @@ FROM alpine:3.3
 MAINTAINER toph <toph@toph.fr>
 
 RUN apk add --no-cache ca-certificates
+RUN mkdir -p /usr/local/sbin
 
-ENV MAILHOG_VERSION 0.1.8
+ENV MAILHOG_VERSION 0.2.0
 
-RUN wget "https://github.com/mailhog/MailHog/releases/download/v$MAILHOG_VERSION/MailHog_linux_amd64" -O /MailHog \
-    && chmod a+x /MailHog
+RUN wget "https://github.com/mailhog/MailHog/releases/download/v$MAILHOG_VERSION/MailHog_linux_amd64" -O /usr/local/sbin/mailhog \
+    && chmod a+x /usr/local/sbin/mailhog
+
+ENV MH_API_BIND_ADDR :80
+ENV MH_UI_BIND_ADDR :80
+ENV MH_SMTP_BIND_ADDR :25
 
 EXPOSE 25 80
 
-CMD ["/MailHog", "--ui-bind-addr=:80", "--api-bind-addr=:80", "--smtp-bind-addr=:25"]
+CMD ["mailhog"]
