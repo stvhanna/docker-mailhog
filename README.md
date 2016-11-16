@@ -2,8 +2,13 @@
 
 Here is an unofficial Dockerfile for [MailHog][mailhog].
 
-You can find several versions of this image in [the dedicated docker hub page][dockerhubpage].  
-It is a pretty light image: ~18 MB uncompressed.
+It is a very small image (~18 MB uncompressed) available on [docker hub][dockerhubpage] based on [Alpine Linux][alpinehubpage] and using the last available release from the official Github repo of [MailHog][mailhog].
+
+## Chagelog
+
+- 2016-09-08 Upgrade MailHog from 0.2.0 to 0.2.1
+- 2016-06-10 Upgrade Alpine Linux from 3.3 to 3.4
+- 2016-03-30 Upgrade MailHog from 0.1.8 to 0.2.0
 
 ## Usage
 
@@ -37,3 +42,4 @@ Just clone this repo and run:
 
   [mailhog]: https://github.com/mailhog/MailHog/ "Web and API based SMTP testing" 
   [dockerhubpage]: https://hub.docker.com/r/tophfr/mailhog/ "MailHog docker hub page"
+  [alpinehubpage]: https://hub.docker.com/_/alpine/ "A minimal Docker image based on Alpine Linux with a complete package index and only 5 MB in size!"
