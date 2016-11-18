@@ -4,7 +4,10 @@ services:
 
   mail:
     image: tophfr/mailhog
-    build: .
+    build:
+      context: .
+      args:
+        MAILHOG_VERSION: $VERSION
     ports:
       - 1080:80
       - 1025:25
