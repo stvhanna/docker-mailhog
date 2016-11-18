@@ -16,4 +16,8 @@ ENV MH_SMTP_BIND_ADDR :25
 
 EXPOSE 25 80
 
+COPY entrypoint.sh /
+
+ENTRYPOINT ["/entrypoint.sh"]
+
 CMD ["mailhog"]

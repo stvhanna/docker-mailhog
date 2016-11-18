@@ -7,11 +7,25 @@ services:
     build: .
     ports:
       - 1080:80
+      - 1025:25
     depends_on:
       - mongo
     environment:
       MH_STORAGE: mongodb
       MH_MONGO_URI: mongo:27017
+
+    # Release configuration wih a file:
+    #  MH_OUTGOING_SMTP: /outgoing-smtp.json
+    #volumes:
+    #  - ./outgoing-smtp.json:/outgoing-smtp.json
+
+    # Release configuration in a single var:
+    #  MH-OUTGOING_CONTENT: '{ "mysmtp": { "name": "MySMTP", "host": "smtp.myserver.com", "port": "25", "email": "my@address.email" } }'
+
+    # Release configuration (one server only) in structured vars:
+    #  MH_OUTGOING_SMTP_HOST: smtp.myserver.com
+    #  MH_OUTGOING_SMTP_PORT: 25
+    #  MH_OUTGOING_SMTP_EMAIL: my@address.email
 
   mongo:
     image: mongo
@@ -20,5 +34,5 @@ services:
     image: alpine:3.4
     depends_on:
       - mail
-    command: "sh -c 'echo \"Subject: bonjour\n\nça va bien ?\nbisou\" | sendmail -S mail aaa@zzz.eee'"
+    command: "sh -c 'echo \"From: x@y.z\nSubject: bonjour\n\nça va bien ?\nbisou\" | sendmail -S mail aaa@zzz.eee'"
 
