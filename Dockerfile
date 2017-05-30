@@ -1,11 +1,11 @@
-FROM alpine:3.4
+FROM alpine:3.6
 
 MAINTAINER toph <toph@toph.fr>
 
 RUN apk add --no-cache ca-certificates openssl
 RUN mkdir -p /usr/local/sbin
 
-ARG MAILHOG_VERSION=0.2.1
+ARG MAILHOG_VERSION=1.0.0
 
 RUN wget "https://github.com/mailhog/MailHog/releases/download/v$MAILHOG_VERSION/MailHog_linux_amd64" -O /usr/local/sbin/mailhog \
     && chmod a+x /usr/local/sbin/mailhog
