@@ -23,7 +23,7 @@ services:
     #  - ./outgoing-smtp.json:/outgoing-smtp.json
 
     # Release configuration in a single var:
-    #  MH-OUTGOING_CONTENT: '{ "mysmtp": { "name": "MySMTP", "host": "smtp.myserver.com", "port": "25", "email": "my@address.email" } }'
+    #  MH_OUTGOING_CONTENT: '{ "mysmtp": { "name": "MySMTP", "host": "smtp.myserver.com", "port": "25", "email": "my@address.email" } }'
 
     # Release configuration (one server only) in structured vars:
     #  MH_OUTGOING_SMTP_HOST: smtp.myserver.com
