@@ -34,7 +34,7 @@ services:
     image: mongo
 
   test:
-    image: alpine:3.6
+    image: alpine:3.7
     depends_on:
       - mail
     command: "sh -c 'echo \"From: x@y.z\nSubject: bonjour\n\nça va bien ?\nbisou\" | sendmail -S mail aaa@zzz.eee'"

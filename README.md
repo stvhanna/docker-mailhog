@@ -6,6 +6,7 @@ It is a very small image (~18 MB uncompressed) available on [docker hub][dockerh
 
 ## Changelog
 
+- 2018-01-02 Upgrading Alpine Linux from 3.6 to 3.7
 - 2017-05-30 Upgrading MailHog from 0.2.1 to 1.0.0 and Alpine from 3.4 to 3.6
 - 2016-11-18 Adding new vars to easily configure the Release feature
 - 2016-09-08 Upgrading MailHog from 0.2.0 to 0.2.1
