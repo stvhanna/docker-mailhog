@@ -9,8 +9,8 @@ services:
       args:
         MAILHOG_VERSION: $VERSION
     ports:
-      - 1080:80
-      - 1025:25
+      - "$IP:1080:80"
+      - "$IP:1025:25"
     depends_on:
       - mongo
     environment:

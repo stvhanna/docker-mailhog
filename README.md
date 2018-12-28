@@ -6,6 +6,7 @@ It is a very small image (~18 MB uncompressed) available on [docker hub][dockerh
 
 ## Changelog
 
+- 2018-12-28 Upgrading Alpine Linux from 3.7 to 3.8
 - 2018-01-02 Upgrading Alpine Linux from 3.6 to 3.7
 - 2017-05-30 Upgrading MailHog from 0.2.1 to 1.0.0 and Alpine from 3.4 to 3.6
 - 2016-11-18 Adding new vars to easily configure the Release feature
@@ -41,6 +42,10 @@ then send yout emails through your docker host on port 1025 (or any port you wan
 Just clone this repo and run:
 
     docker build -t tophfr/mailhog .
+
+or
+
+    docker-compose build
 
 
   [mailhog]: https://github.com/mailhog/MailHog/ "Web and API based SMTP testing" 
