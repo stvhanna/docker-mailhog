@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+
+  mail:
+    depends_on:
+      - mongo
+    environment:
+      MH_STORAGE: mongodb
+      MH_MONGO_URI: mongo:27017
+
+  mongo:
+    image: mongo

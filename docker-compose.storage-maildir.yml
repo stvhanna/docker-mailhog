@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+
+  mail:
+    environment:
+      MH_STORAGE: maildir
+      MH_MAILDIR_PATH: /usr/local/var/lib/mailhog
+    volumes:
+      - maildir:/usr/local/var/lib/mailhog
+
+volumes:
+  maildir:

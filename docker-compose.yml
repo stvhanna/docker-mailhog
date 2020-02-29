@@ -11,11 +11,8 @@ services:
     ports:
       - "$IP:1080:80"
       - "$IP:1025:25"
-    depends_on:
-      - mongo
     environment:
-      MH_STORAGE: mongodb
-      MH_MONGO_URI: mongo:27017
+      MH_STORAGE: memory
 
     # Release configuration wih a file:
     #  MH_OUTGOING_SMTP: /outgoing-smtp.json
@@ -29,9 +26,6 @@ services:
     #  MH_OUTGOING_SMTP_HOST: smtp.myserver.com
     #  MH_OUTGOING_SMTP_PORT: 25
     #  MH_OUTGOING_SMTP_EMAIL: my@address.email
-
-  mongo:
-    image: mongo
 
   test:
     image: alpine:3.7
